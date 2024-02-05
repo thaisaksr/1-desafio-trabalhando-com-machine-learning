@@ -226,3 +226,8 @@ Revise os resultados do teste, que incluem um número previsto de aluguéis com 
     312.6685563926644
   ]
 }
+##Referencia##
+Links Importantes
+Explore Azure AI Services
+
+Explore Automated Machine Learning in Azure Machine Learning
