@@ -160,52 +160,53 @@ Espere o trabalho terminar. Pode demorar um pouco – agora pode ser um bom mome
 
 ## Passo 9
 
-_Avalie o melhor modelo_
+*Avaliar Métrica
+9.1 -> Acessar as informações do modelo conforme imagem abaixo
 
 Quando o trabalho automatizado de aprendizado de máquina for concluído, você poderá revisar o melhor modelo treinado.
 
 Na guia Visão geral do trabalho automatizado de aprendizado de máquina, observe o melhor resumo do modelo.
 
-2- Selecione o texto em Nome do algoritmo do melhor modelo para visualizar seus detalhes.
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/2fde32a6-b418-47bb-bb68-d785534ccf99)
 
-3- Selecione a guia Métricas e selecione os gráficos residuais e predito_true se eles ainda não estiverem selecionados.
+9.2 -> Acessar o job
 
-Revise os gráficos que mostram o desempenho do modelo. O gráfico de resíduos mostra **os resíduos** (as diferenças entre os valores previstos e reais) como um histograma. O gráfico **predito_true** compara os valores previstos com os valores verdadeiros.  
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/8908ead6-ca1e-498c-80ee-10be74e3060a)
+
+9.3 -> Acessar as métricas
+
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/a597b595-e5dc-49d7-9962-9ddcc15d8a09)
+
+## Passo 10
+*Deploy e Teste do Modelo
+
+*10.1 -> De volta à página do modelo, escolhemos a opção de Deploy Web Service.
+
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/14e226d8-fd62-4af7-8a1d-6255ae795051)
+
+10.2 -> Preencher com as informações fornecidas na documentação e clicar em "Deploy"
+
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/2a81cb49-f033-499d-b733-60391e074cb8)
+
+10.3 -> Receberemos a notificação de que o deploy está completo e, no menu esquerdo, vamos clicar na aba Endpoints.
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/886779ff-d5d2-4779-81b8-768c82f94595)
+
+10.4 -> Na tela de Endpoint, confirmamos o status "Succeed" do deploy, e clicamos na aba "Test"
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/3464ab4d-b0f8-4ad8-a0d2-22ded5a8d980)
 
 
-
-
-
-
-
-##Implantar e testar o modelo
-
-Na guia Modelo do melhor modelo treinado pelo seu trabalho automatizado de machine learning, selecione Implantar e use a opção de serviço Web para implantar o modelo com as seguintes configurações:
-
-Nome : prever-aluguéis
-
-Descrição : Prever aluguel de bicicletas
-
-Tipo de computação : Instância de Contêiner do Azure
-
-Habilitar autenticação : selecionado
+10.4 -> Substituímos o json existente, pelo código fornecido pela documentação, e depois clicamos em "Test".
+10.5 -> Resultado do Teste
 
 Aguarde o início da implantação – isso pode levar alguns segundos. O status de implantação do endpoint de previsão de aluguel será indicado na parte principal da página como Running .
 
 Aguarde até que o status da implantação mude para Succeeded . Isso pode levar de 5 a 10 minutos.
 
-## Testar o serviço implantado
+##Códigos:
 
-Agora você pode testar seu serviço implantado.
+###Input
 
-No estúdio Azure Machine Learning, no menu esquerdo, selecione Endpoints e abra o ponto final em tempo real de previsão de alugueres .
-
-Na página do endpoint em tempo real de previsão de aluguel, visualize a guia Teste .
-
-No painel Dados de entrada para testar o endpoint , substitua o modelo JSON pelos seguintes dados de entrada:
-
-Código
- {
+`` {
    "Inputs": { 
      "data": [
        {
@@ -226,20 +227,27 @@ Código
    },   
    "GlobalParameters": 1.0
  }
+``
 
+###Output
 
- Clique no botão Testar .
 
 Revise os resultados do teste, que incluem um número previsto de aluguéis com base nos recursos de entrada - semelhante a este:
 
-
+``
 {
   "Results": [
     312.6685563926644
   ]
 }
-##Referencia##
-Links Importantes
-Explore Azure AI Services
+``
 
-Explore Automated Machine Learning in Azure Machine Learning
+
+
+
+
+
+
+
+
+
