@@ -1,141 +1,134 @@
 # 1-desafio-trabalhando-com-machine-learning
-modelo de previsão com seus devidos pontos de extremidade configurados
 
-## 1-Crie um espaço de trabalho do Azure Machine Learning
+Passo a passo de experimento de Aprendizagem Automatizada, de Regressão, utilizando A Azure Machine Learning, realizado como desafio de projeto no Bootcamp Microsoft Azure AI Fundamentals da Dio.me
 
-1- Entre no portal do Azure usando https://portal.azure.comsuas credenciais da Microsoft.
+## Passo 1
+* Criar uma conta no [https://azure.microsoft.com/pt-br/free]
 
-2- Selecione + Criar um recurso , pesquise Machine Learning e crie um novo recurso do Azure Machine Learning com as seguintes configurações:
+## Passo 2
+* Acessar a plataforma do Azure em portal.azure.com
+* Buscar por "Azure Machine Learning" no campo de busca e selecionar o card referido.
 
-**Assinatura:** sua assinatura do Azure .
+## Passo 3
+* Clicar em "Criar", para criar um novo workspace
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/107935d0-b1ac-43bb-bda3-49863fcca536)
 
-**Grupo de recursos:** : Crie ou selecione um grupo de recursos .
+## Passo 4
+* Criar um novo "resource group", criar um "nome", a "região", e clicar em "Examinar e criar"
 
-**Nome:** Insira um nome exclusivo para seu espaço de trabalho .
+* *Assinatura:* * sua assinatura do Azure .
 
-**Região:** Selecione a região geográfica mais próxima .
+* *Grupo de recursos:** : Crie ou selecione um grupo de recursos .
 
-**Conta de armazenamento:** observe a nova conta de armazenamento padrão que será criada para seu espaço de trabalho .
+* *Nome:** Insira um nome exclusivo para seu espaço de trabalho .
 
-**Cofre de chaves:** Observe o novo cofre de chaves padrão que será criado para seu espaço de trabalho .
+* *Região:* * Selecione a região geográfica mais próxima .
 
-**Insights de aplicativos:** observe o novo recurso padrão de insights de aplicativos que será criado para seu espaço de trabalho .
+* *Conta de armazenamento:** observe a nova conta de armazenamento padrão que será criada para seu espaço de trabalho .
 
-**Registro de contêiner:** Nenhum ( um será criado automaticamente na primeira vez que você implantar um modelo em um contêiner ).
+* *Cofre de chaves:** Observe o novo cofre de chaves padrão que será criado para seu espaço de trabalho .
 
-2-Selecione Revisar + criar e selecione Criar . Aguarde a criação do seu espaço de trabalho (pode demorar alguns minutos) e, em seguida, vá para o recurso implantado.
+* *Insights de aplicativos:** observe o novo recurso padrão de insights de aplicativos que será criado para seu espaço de trabalho .
 
-3-Selecione Launch Studio (ou abra uma nova guia do navegador e navegue até https://ml.azure.com e entre no Azure Machine Learning Studio usando sua conta da Microsoft). Feche todas as mensagens exibidas.
+* *Registro de contêiner:** Nenhum ( um será criado automaticamente na primeira vez que você implantar um modelo em um contêiner ).
 
-4-No estúdio Azure Machine Learning, você deverá ver seu espaço de trabalho recém-criado. Caso contrário, selecione Todos os espaços de trabalho no menu à esquerda e selecione o espaço de trabalho que você acabou de criar.
 
-## Use aprendizado de máquina automatizado para treinar um modelo
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/9b2c71de-9535-4bff-a7bf-38d36605a278)
 
-No Azure Machine Learning Studio , veja a página Automated ML (em Authoring ).
+* *Examinar+ criar**
 
-Crie um novo trabalho de ML automatizado com as seguintes configurações, usando Next conforme necessário para avançar pela interface do usuário:
+* Aguardar até que a validação seja aprovada, e então clicar em "criar"
 
-Configurações básicas :
+  ## Passo 5
 
-Nome do trabalho : mslearn-bike-automl
+* A implantação fica em andamento e pode ser acompanhada na tela que é aberta automaticamente
 
-Novo nome do experimento : mslearn-bike-rental
+  ![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/98f3fc03-61a8-4f31-aaff-48823fcff6a7)
 
-Descrição : Aprendizado de máquina automatizado para 
+* Esta é a tela de finalização. Agora podemos clicar em "ir para o recurso".
 
-previsão de aluguel de bicicletas
+  ![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/2945698f-fc4b-43b1-9cd3-b352c64cdc1a)
 
-Marcadores : nenhum
+* Na tela do recurso, clicar em "Iniciar estúdio"
 
-Tipo de tarefa e dados :
+  ![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/1eae82ed-ed9f-4ac8-b2a3-0235fdefde85)
 
+  ## Passo 6
 
-Selecione o tipo de tarefa : Regressão
+* O diretório do workspace é então aberto.
+* Posso visualizar todos os workspaces existentes, clicando em "all workspaces", do lado esquerdo.
 
-Selecionar conjunto de dados : crie um novo conjunto de dados com as seguintes configurações:
+  ![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/ad48c0a1-45d9-425b-9ad3-c792bfec8cb2)
 
-Tipo de dados :
+  ## Passo 7
+* O workspace escolhido é aberto. Preciso agora entrar no ambiente "Automated ML" e clicar em criar um "new ML automated job"
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/10a7168e-3498-43f5-9bc4-e56d5a51d38b)
 
-Nome : aluguel de bicicletas
+## Passo 8
+* Preencher os dados do job com as informações (fornecidas pela documentação da Microsoft)
 
-Descrição : dados históricos de aluguel de bicicletas
+* 7.1 -> Preenchimento das informações básicas
 
-Tipo : Tabular
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/2121ecd0-cd92-455c-98eb-9a6624be5c01)
 
+* 7.2 -> Escolha do tipo de tarefa (Regressão) e criação do dataset
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/e483e4dc-844f-455c-a848-de139d7af392)
 
-Fonte de dados :
+* 7.3 -> Preenchimento das informações do dataset
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/e68534c5-32f3-4cd9-a87e-e5818ce6040c)
 
-Selecione Dos arquivos da web
+* 7.4 -> Escolha da fonte dos dados
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/6d57d72a-84c1-414c-b765-355265a98de0)
 
-URL da Web :
+* 7.5 -> Inclusão da url do dataset. A url passa por uma verificação e validação.
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/74c639fd-714e-49c3-89b6-7d3963948429)
 
-URL da Web :https://aka.ms/bike-rentals
+* 7.6 -> Os dados devem estar com as seguintes configurações
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/4d9885d6-2b0d-48d2-be5d-cd602a3f310f)
 
-Ignorar validação de dados : não selecionar
+* 7.7 -> Ele traz uma visualização do schema. Não é necessário alterar nenhuma informação.
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/ef328e46-197f-49c8-b0fb-6064411d7af4)
 
-Configurações :
+* 7.8 -> Por fim, ele traz todas informações para review, e clicamos em "criar", para criar o dataset.
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/1c2eaf1a-7adc-4981-89b5-6c540856821e)
 
-Formato de arquivo : Delimitado
+* 7.9 -> Para avançar, selecionamos o dataset, e clicamos em "next"
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/a1c46348-7e53-4464-87bd-1c352253bb78)
 
-Delimitador : Vírgula
+*7.10 -> Configurações adicionais :
 
-Codificação : UTF-8
+_Métrica primária_: raiz do erro quadrático médio normalizado
+_Explique o melhor modelo_: Não selecionado
+_Usar todos os modelos suportados_ : Desmarcado . Você restringirá o trabalho para tentar apenas alguns algoritmos específicos.
+_Modelos permitidos_ : Selecione apenas RandomForest e LightGBM — normalmente você gostaria de tentar o máximo possível, mas cada modelo adicionado aumenta o tempo necessário para executar o trabalho.
+  
+_Limites_ : expanda esta seção
 
-Cabeçalhos de coluna : apenas o primeiro arquivo 
-possui cabeçalhos
+_Máximo de testes_ : 3
 
-Pular linhas : Nenhum
+_Máximo de testes simultâneos_ : 3
 
-O conjunto de dados contém dados multilinhas : não selecione
+_Máximo de nós_ : 3
 
-Esquema :
+_Limite de pontuação da métrica_ : 0,085 ( para que, se um modelo atingir uma pontuação da métrica de erro quadrático médio normalizado de 0,085 ou menos, o trabalho termina. )
+  
+_Tempo limite_: 15
 
-Incluir todas as colunas exceto Caminho
+_Tempo limite de iteração_ : 15
 
-Revise os tipos detectados automaticamente
-Selecione Criar . Após a criação do conjunto de dados, selecione o conjunto de dados de aluguel de bicicletas para continuar a enviar o trabalho de ML automatizado.
+_Habilitar rescisão antecipada_ : selecionado
 
-Configurações de tarefa :
+_Validação e teste_ :
 
-Tipo de tarefa : Regressão
+_Tipo de validação_: divisão de validação de trem
 
-Conjunto de dados : aluguel de bicicletas
+_Porcentagem de dados de validação_ : 10
 
-Coluna de destino : Aluguéis (inteiro)
+_Conjunto de dados de teste_ : Nenhum
 
-Configurações adicionais :
+7.11 -> Não é necessário setar nenhuma informação diferença da parte de Computação
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/8775446f-313f-4d59-b7d6-6e0fdf342f91)
 
-Métrica primária : raiz do erro quadrático médio normalizado
-
-Explique o melhor modelo : Não selecionado
-
-Usar todos os modelos suportados : Desmarcado . Você restringirá o trabalho para tentar apenas alguns algoritmos específicos.
-
-Modelos permitidos : Selecione apenas RandomForest e LightGBM — normalmente você gostaria de tentar o máximo possível, mas cada modelo adicionado aumenta o tempo necessário para executar o trabalho.
-
-Limites : expanda esta seção
-
-Máximo de testes : 3
-
-Máximo de testes simultâneos : 3
-
-Máximo de nós : 3
-
-Limite de pontuação da métrica : 0,085 ( para que, se um modelo atingir uma pontuação da métrica de erro quadrático médio normalizado de 0,085 ou menos, o trabalho termina. )
-
-Tempo limite : 15
-
-Tempo limite de iteração : 15
-
-Habilitar rescisão antecipada : selecionado
-
-Validação e teste :
-
-Tipo de validação : divisão de validação de trem
-
-Porcentagem de dados de validação : 10
-
-Conjunto de dados de teste : Nenhum
 
 Calcular :
 
@@ -148,13 +141,26 @@ Camada de máquina virtual : Dedicada
 Tamanho da máquina virtual : Standard_DS3_V2*
 Número de instâncias : 1
 
+7.12 -> 7.12 -> As informações são trazidas e podemos enviar o trabalho de treinamento
+
+
 * Se a sua assinatura restringir os tamanhos de VM disponíveis para você, escolha qualquer tamanho disponível.
 
 Envie o trabalho de treinamento. Ele inicia automaticamente.
 
 Espere o trabalho terminar. Pode demorar um pouco – agora pode ser um bom momento para uma pausa para o café!
 
-## Avalie o melhor modelo
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/28a962be-0760-4d6b-859e-b0822b637658)
+
+## Passo 8
+
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/7bd02f4f-5919-40a7-9ae0-f43a0c283d4b)
+
+![image](https://github.com/thaisaksr/1-desafio-trabalhando-com-machine-learning/assets/149262815/106563f9-6e23-44db-abc3-c1af14ffde7f)
+
+## Passo 9
+
+_Avalie o melhor modelo_
 
 Quando o trabalho automatizado de aprendizado de máquina for concluído, você poderá revisar o melhor modelo treinado.
 
@@ -165,6 +171,12 @@ Na guia Visão geral do trabalho automatizado de aprendizado de máquina, observ
 3- Selecione a guia Métricas e selecione os gráficos residuais e predito_true se eles ainda não estiverem selecionados.
 
 Revise os gráficos que mostram o desempenho do modelo. O gráfico de resíduos mostra **os resíduos** (as diferenças entre os valores previstos e reais) como um histograma. O gráfico **predito_true** compara os valores previstos com os valores verdadeiros.  
+
+
+
+
+
+
 
 ##Implantar e testar o modelo
 
