@@ -206,7 +206,7 @@ Aguarde até que o status da implantação mude para Succeeded . Isso pode levar
 
 ###Input
 
-`` {
+``` {
    "Inputs": { 
      "data": [
        {
@@ -227,20 +227,20 @@ Aguarde até que o status da implantação mude para Succeeded . Isso pode levar
    },   
    "GlobalParameters": 1.0
  }
-``
+```
 
 ###Output
 
 
 Revise os resultados do teste, que incluem um número previsto de aluguéis com base nos recursos de entrada - semelhante a este:
 
-``
+```
 {
   "Results": [
     312.6685563926644
   ]
 }
-``
+```
 
 
 
